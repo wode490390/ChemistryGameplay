@@ -7,7 +7,7 @@
     <groupId>cn.wode490390.nukkit</groupId>
     <artifactId>chemistry</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.388</version>
+    <version>1.1.388</version>
     <name>ChemistryGameplay</name>
     <description>Chemistry gameplay plugin for Nukkit</description>
     <url>http://wode490390.cn/</url>

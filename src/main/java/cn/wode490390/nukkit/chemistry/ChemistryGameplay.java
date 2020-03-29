@@ -20,6 +20,7 @@ import cn.wode490390.nukkit.chemistry.resourcepacks.ChemistryResourcePack;
 import cn.wode490390.nukkit.chemistry.util.MetricsLite;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -41,7 +42,7 @@ public class ChemistryGameplay extends PluginBase implements Listener {
     @Override
     public void onEnable() {
         try {
-            new MetricsLite(this);
+            new MetricsLite(this, 6157);
         } catch (Throwable ignore) {
 
         }
@@ -66,6 +67,7 @@ public class ChemistryGameplay extends PluginBase implements Listener {
                 }
             }
 
+            Entity.registerEntity("TNT", EntityPrimedTNT.class);
             Entity.registerEntity("NPC", EntityNpc.class);
             Entity.registerEntity("Agent", EntityAgent.class);
             if (protocol >= 388) { //1.13
@@ -75,6 +77,7 @@ public class ChemistryGameplay extends PluginBase implements Listener {
             Entity.registerEntity("Balloon", EntityBalloon.class);
 
             this.registerBlock(BlockId.ELEMENT_0, BlockElementUnknown.class);
+            this.registerBlock(Block.TNT, BlockTNT.class);
             this.registerBlock(ItemId.GLOW_STICK, BlockGlowStick.class); //hack
             this.registerBlock(BlockId.HARD_GLASS_PANE, BlockGlassPaneHardened.class);
             this.registerBlock(BlockId.HARD_STAINED_GLASS_PANE, BlockGlassPaneStainedHardened.class);
